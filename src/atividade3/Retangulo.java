@@ -14,10 +14,7 @@ public class Retangulo {
         System.out.println(perimetro);
     }
 
-/*
-    Considerando que sempre será utilizado cerca
-    de 10% a mais da area por ser retangulo
- */
+
     public static void quantidadePiso(double areaLajota, double areaTotal) {
         double qtdLajotas = areaTotal / areaLajota;
         System.out.println(qtdLajotas + (10.0 / 100));
