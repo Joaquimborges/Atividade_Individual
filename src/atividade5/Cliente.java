@@ -2,7 +2,7 @@ package atividade5;
 
 public class Cliente {
 
-    private static int id;
+    private static int id = 0;
     private String nome, cpf, endereco;
     private String email, telefone;
 
