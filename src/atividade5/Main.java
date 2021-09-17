@@ -14,7 +14,7 @@ public class Main {
         nome = scan.nextLine();
 
 
-        System.out.println("Entre com o seu cpf: ");
+        System.out.println("Entre com o seu cpf (ex: 123.456.891-05): ");
         cpf = scan.nextLine();
 
 
@@ -30,6 +30,8 @@ public class Main {
         telefone = scan.nextLine();
 
         c.cadastrarCliente(nome, cpf, endereco, email, telefone);
+
+
 
 
 
