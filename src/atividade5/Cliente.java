@@ -1,12 +1,13 @@
 package atividade5;
 
+import java.net.http.HttpResponse;
 import java.util.InputMismatchException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Cliente {
 
-    private static int id = 0;
+    private static int id = 1;
     private String nome, cpf, endereco;
     private String email, telefone;
 
@@ -68,12 +69,12 @@ public class Cliente {
     @Override
     public String toString() {
         return "Cliente{" +
-                "id: " + id +
-                ", nome: '" + nome + '\'' +
-                ", cpf: '" + cpf + '\'' +
-                ", endereco: '" + endereco + '\'' +
-                ", email: '" + email + '\'' +
-                ", telefone: '" + telefone + '\'' +
+                "id: " + id + '\n' +
+                ", nome: '" + nome + '\n' +
+                ", cpf: '" + cpf + '\n' +
+                ", endereco: '" + endereco + '\n' +
+                ", email: '" + email + '\n' +
+                ", telefone: '" + telefone + '\n' +
                 '}';
     }
 
@@ -102,7 +103,7 @@ public class Cliente {
             peso = 10;
             for (i=0; i<9; i++) {
 
-                num = (int)(cpf.charAt(i) - 48);
+                num = (cpf.charAt(i) - 48);
                 sm = sm + (num * peso);
                 peso = peso - 1;
             }
@@ -116,7 +117,7 @@ public class Cliente {
             sm = 0;
             peso = 11;
             for(i=0; i<10; i++) {
-                num = (int)(cpf.charAt(i) - 48);
+                num = (cpf.charAt(i) - 48);
                 sm = sm + (num * peso);
                 peso = peso - 1;
             }
@@ -151,6 +152,16 @@ public class Cliente {
         Matcher m = p.matcher(telefone);
 
         return m.matches();
+    }
+
+    public void cadastrarCliente(String nome, String cpf, String endereco, String email, String telefone) {
+        if (nomeValido(nome) && cpfValido(cpf) &&
+            emailValido(email) && telefoneValido(telefone)) {
+            Cliente cliente = new Cliente(nome, cpf, endereco, email, telefone);
+            System.out.println(cliente);
+        }else {
+            System.out.println("O cliente não pode ser cadastrado, dados inválidos!");
+        }
     }
 
 
