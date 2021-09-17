@@ -1,11 +1,10 @@
 package atividade2;
 
-import java.util.Locale;
 
 public class ManipulaString {
 
     public static String inverteString(String nome) {
-        return new StringBuffer(nome.toUpperCase(Locale.ROOT)).reverse().toString();
+        return new StringBuffer(nome.toUpperCase()).reverse().toString();
     }
 
 
