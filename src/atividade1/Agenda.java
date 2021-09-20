@@ -31,7 +31,7 @@ public class Agenda {
 
     public void exibirTodaAgenda() {
         pessoaList
-                .forEach(pessoa -> System.out.println(pessoa.toString()));
+                .forEach(System.out::println);
     }
 
     public void exibirPessoa(int index) {

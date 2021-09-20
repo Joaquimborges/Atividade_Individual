@@ -3,18 +3,22 @@ package atividade2;
 
 public class ManipulaString {
 
-    public static String inverteString(String nome) {
-        return new StringBuffer(nome.toUpperCase()).reverse().toString();
+    public StringBuilder inverteString(String nome) {
+        StringBuilder invert = new StringBuilder();
+        for (int i = (nome.length() -1); i >=0; i--) {
+            invert.append(nome.charAt(i));
+        }
+        return invert;
     }
 
 
-    public static void palindromo(String nome) {
-       String auxiliar = "";
+    public void palindromo(String nome) {
+       StringBuilder auxiliar = new StringBuilder();
        for (int i = (nome.length() -1); i >=0; i--) {
-           auxiliar += nome.charAt(i);
+           auxiliar.append(nome.charAt(i));
        }
 
-       if (auxiliar.toLowerCase()
+       if (auxiliar.toString().toLowerCase()
                .replaceAll(" ", "")
                .equals(nome.toLowerCase().replaceAll(" ", "")))  {
 

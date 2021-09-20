@@ -94,19 +94,19 @@ public class Cliente {
 
     public boolean emailValido(String email) {
         this.email = email;
-        Pattern p = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\" +
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\" +
                 ".[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$");
-        Matcher m = p.matcher(email);
-        return m.matches();
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
     public boolean telefoneValido(String telefone) {
         this.telefone = telefone;
-        Pattern p = Pattern.compile("^\\(?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\\)?" +
+        Pattern pattern = Pattern.compile("^\\(?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\\)?" +
                 " ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$");
-        Matcher m = p.matcher(telefone);
+        Matcher matcher = pattern.matcher(telefone);
 
-        return m.matches();
+        return matcher.matches();
     }
 
     public void cadastrarCliente(String nome, String cpf, String endereco, String email, String telefone) {

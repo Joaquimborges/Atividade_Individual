@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-       System.out.println(ManipulaString.inverteString("joaquim"));
-       ManipulaString.palindromo("subi no onibus");
+        ManipulaString ms = new ManipulaString();
+       System.out.println(ms.inverteString("joaquim"));
+         ms.palindromo("subi no onibus");
 
 
 
